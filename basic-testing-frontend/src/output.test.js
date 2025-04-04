@@ -23,7 +23,7 @@ describe("generateResultText()", () => {
     expect(result3).toBeTypeOf("string");
   });
 
-  it("should return the expected result text when 'invalid' is passed", () => {
+  it(`should return the expected result text when "${INVALID}" is passed`, () => {
     const invalid = INVALID;
 
     const result = generateResultText(invalid);
@@ -31,7 +31,7 @@ describe("generateResultText()", () => {
     expect(result).toBe(invalidLanguage);
   });
 
-  it("should an empty string when 'no-calc' is provided", () => {
+  it(`should an empty string when "${NO_CALC}" is provided`, () => {
     const noCalc = NO_CALC;
     const emptyString = "";
 
@@ -40,7 +40,7 @@ describe("generateResultText()", () => {
     expect(result).toBe(emptyString);
   });
 
-  it("should return the formatted text when the input is anything not 'no-calc' or 'invalid'", () => {
+  it(`should return the formatted text when the input is anything not "${NO_CALC}" or "${INVALID}"`, () => {
     const input = "12";
     const expectedResult = resultPrefix + input;
 
