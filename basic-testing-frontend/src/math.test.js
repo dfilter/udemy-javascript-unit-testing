@@ -55,9 +55,17 @@ it("should yield 0 if an empty array is provided", () => {
 
 it("should throw an error if no value is pass into the function", () => {
   // if we expect a function to throw an error we can wrap it in another function...
-  const resultFn = () => {
-    add();
-  };
+  const resultFn = () => add();
+
   // ...and pass to to vitest.
+  expect(resultFn).toThrow();
+});
+
+it("should throw an error if provided with multiple arguments instead of an array", () => {
+  const number1 = 1;
+  const number2 = 2;
+
+  const resultFn = () => add(number1, number2);
+
   expect(resultFn).toThrow();
 });
