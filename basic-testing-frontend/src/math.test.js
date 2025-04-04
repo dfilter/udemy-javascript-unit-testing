@@ -41,3 +41,23 @@ it("should yield a correct sum if an array of numeric string values are provided
   // Assert
   expect(result).toBe(expectedResults);
 });
+
+it("should yield 0 if an empty array is provided", () => {
+  // Arrange
+  const numbers = [];
+
+  // Act
+  const result = add(numbers);
+
+  // Assert
+  expect(result).toBe(0);
+});
+
+it("should throw an error if no value is pass into the function", () => {
+  // if we expect a function to throw an error we can wrap it in another function...
+  const resultFn = () => {
+    add();
+  };
+  // ...and pass to to vitest.
+  expect(resultFn).toThrow();
+});
