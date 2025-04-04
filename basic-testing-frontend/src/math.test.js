@@ -58,7 +58,7 @@ it("should throw an error if no value is pass into the function", () => {
   const resultFn = () => add();
 
   // ...and pass to to vitest.
-  expect(resultFn).toThrow();
+  expect(resultFn).toThrow(/is not iterable/);
 });
 
 it("should throw an error if provided with multiple arguments instead of an array", () => {
@@ -67,5 +67,5 @@ it("should throw an error if provided with multiple arguments instead of an arra
 
   const resultFn = () => add(number1, number2);
 
-  expect(resultFn).toThrow();
+  expect(resultFn).toThrow(/is not iterable/);
 });
