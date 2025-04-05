@@ -12,14 +12,21 @@ vi.mock("path", () => ({
 }));
 
 describe("writeData()", () => {
-  it("should the write file method", () => {
+  it("should execute the writeFile method and check that it returns a promise", () => {
     const data = "Test";
     const filename = "test.txt";
 
     writeData(data, filename);
 
-    // return expect().resolves.toBeUndefined();
-    // expect(fs.writeFile).toBeCalled();
+    return expect(writeData(data, filename)).resolves.toBeUndefined();
+  });
+
+  it("should execute the writeFile method with expected arguments", () => {
+    const data = "Test";
+    const filename = "test.txt";
+
+    writeData(data, filename);
+
     expect(fs.writeFile).toBeCalledWith(filename, data);
   });
 });
