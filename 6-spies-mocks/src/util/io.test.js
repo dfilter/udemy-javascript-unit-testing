@@ -5,6 +5,11 @@ import writeData from "./io";
 // vi.mock should be called in all the test files where we
 // want to test fs for example.
 vi.mock("fs");
+vi.mock("path", () => ({
+  default: {
+    join: (...args) => args[args.length - 1],
+  },
+}));
 
 describe("writeData()", () => {
   it("should the write file method", () => {
@@ -14,6 +19,7 @@ describe("writeData()", () => {
     writeData(data, filename);
 
     // return expect().resolves.toBeUndefined();
-    expect(fs.writeFile).toBeCalled();
+    // expect(fs.writeFile).toBeCalled();
+    expect(fs.writeFile).toBeCalledWith(filename, data);
   });
 });
