@@ -50,11 +50,10 @@ describe("transformToNumber()", () => {
 describe("cleanNumbers()", () => {
   it("should return an array of number values if an array of numeric strings are provided", () => {
     const stringNumbers = ["1", "2"];
-    const expectedResult = [1, 2];
 
     const cleanedNumbers = cleanNumbers(stringNumbers);
 
-    expect(cleanedNumbers).toEqual(expectedResult);
+    expect(cleanedNumbers).toEqual([1, 2]);
   });
 
   it("should throw an error if at least one empty string is provided", () => {
