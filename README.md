@@ -1,5 +1,7 @@
 # Udemy Javascript Unit Testing Course
 
+![certificate](./certificate.jpg)
+
 ## Course Information
 
 Automated testing is a key concept in modern (web) development.
